@@ -6,15 +6,15 @@ int main()
 {
 int i = 0;
 double tempvalue = 0;
-Kalman1d temprature(5,20);
+Kalman1v temprature(5,20); // as temprature sesnor
 for(i = 0; i  < 22 ; i++)
 {
-	temprature.Update((double)3 , double(30 + i%3));
-	tempvalue = temprature.Compute();
-	cout << "tempvalue[" << i << "] " << "= " << tempvalue  << endl;
+	temprature.Update((double)3 , double(30 + i%6)); // measurment error is constant, temp varies from 30 36 (as it is 33)
+	tempvalue = temprature.Compute(); //compute the new value
+	cout << "tempvalue[" << i << "] " << "= " << tempvalue  << endl; //print values
 }
 
-	cout << "Final Value = " << tempvalue << endl; 
+	
 return 0;
 }
 
