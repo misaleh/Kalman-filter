@@ -15,5 +15,17 @@ private:
 	double _EstimateValueOld; // Est at t-1
 	double _KalmanGain;       //kalman gain (KG)
 };
+
+class Kalmanmv//apply kalman filter for multi variable system
+{
+public:
+	//Kalman1v(int **xk0 , int **pk0 ,);// intial state and covarince , A , B  , u ,matrices
+	//void Update();
+	//double Compute(void);
+private:
+	//double _KalmanGain;       //kalman gain (KG)
+	void MatrixMult(int **matrix1,int r1,int c1,int **matrix2,int r2,int c2,int **Output); //matrix multiplication
+};
+
 #endif
 

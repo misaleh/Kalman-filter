@@ -22,4 +22,31 @@ double Kalman1v::Compute(void)
 	return  _EstimateValue;
 }
 
+void Kalmanmv::MatrixMult(int **matrix1,int r1,int c1,int **matrix2,int r2,int c2,int **Output)
+{
+	int i = r1; //row
+ 	int j = c1; //cols
+	int k = 0;
+	int element = 0;
+	for(i = 0 ; i < r1 ; i++)
+	{
+			for(j = 0 ; j < c2 ; j++)
+			{
+				for(k  = 0 ; k < r2 ; k++)
+				{
+					element  += (matrix1[i][k] * matrix2[k][j]) ;
+
+				}
+			Output[i][j] = element;
+			//cout <<"Output[" <<i<<"]"<<"["<<j<<"] = "<< element <<endl; //for debuging 
+			element =  0;
+							
+			}
+					
+	}
+    
+}
+
+
+
 
