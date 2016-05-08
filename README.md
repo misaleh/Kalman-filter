@@ -1,2 +1,2 @@
 ### ***Kalman filter library for C++***
-***1 variable calss is finished, multi variable is not finished yet***
+***1 variable class is finished, multi variable is not finished yet***
