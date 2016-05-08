@@ -19,12 +19,24 @@ private:
 class Kalmanmv//apply kalman filter for multi variable system
 {
 public:
-	//Kalman1v(int **xk0 , int **pk0 ,);// intial state and covarince , A , B  , u ,matrices
-	//void Update();
+	Kalmanmv(double **xk0 ,int rx, int cx, double **pk0, int rp,int cp); // intiliaze the object , init position and state as argumnents
+	// intial state and covarince matrices
+	void Update(double **A ,double **B, double **U,double **Y,double **H);
 	//double Compute(void);
 private:
-	//double _KalmanGain;       //kalman gain (KG)
-	void MatrixMult(int **matrix1,int r1,int c1,int **matrix2,int r2,int c2,int **Output); //matrix multiplication
+	double **_xk;
+	double **_pk;
+	int _rp;
+	int _rx;
+	int _cp;
+	int _cx;
+	double **_A;
+	double **_B;
+	double **_U;
+	double **_Y;
+	double **_H;
+
+	void MatrixMult(double **matrix1,int r1,int c1,double **matrix2,int r2,int c2,double **Output); //matrix multiplication
 };
 
 #endif

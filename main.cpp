@@ -5,15 +5,15 @@ using namespace std;
 
 int main()
 {
-int mat1[2][2] = {{1, 0},{0, 1}};
-int mat2[2][2] ={{1, 2},{1, 3}};
-int  mat3[2][2];
-int *mat1p[2] = {&mat1[0][0], &mat1[1][0]};
-int *mat2p[2] = {&mat2[0][0], &mat2[1][0]};
-int *mat3p[2] = {&mat3[0][0], &mat3[1][0]};
-int **mat1pp = &mat1p[0]; 
-int **mat2pp = &mat2p[0];
-int **mat3pp = &mat3p[0];
+double mat1[2][2] = {{1, 0},{0, 1}};
+double mat2[2][2] ={{1, 2},{1, 3}};
+double  mat3[2][2];
+double *mat1p[2] = {&mat1[0][0], &mat1[1][0]};
+double *mat2p[2] = {&mat2[0][0], &mat2[1][0]};
+double *mat3p[2] = {&mat3[0][0], &mat3[1][0]};
+double **mat1pp = &mat1p[0]; 
+double **mat2pp = &mat2p[0];
+double **mat3pp = &mat3p[0];
 int i = 0;
 double tempvalue = 0;
 Kalman1v temprature(5,20); // as temprature sesnor

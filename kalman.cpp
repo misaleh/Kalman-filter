@@ -21,8 +21,24 @@ double Kalman1v::Compute(void)
 	_EstimateValueOld = _EstimateValue; //update old value
 	return  _EstimateValue;
 }
-
-void Kalmanmv::MatrixMult(int **matrix1,int r1,int c1,int **matrix2,int r2,int c2,int **Output)
+Kalmanmv::Kalmanmv(double **xk0 ,int rx, int cx, double **pk0, int rp,int cp)
+{
+	**_xk = **xk0;
+	**_pk = **pk0;
+	_cx = cx;
+	_rx = rx;
+	_cp = cp;
+	_rp = rp;
+}
+void Kalmanmv::Update(double **A ,double **B, double **U,double **Y,double **H)	
+{
+	_A = A;
+	_B = B;
+	_U = U;
+	_Y = Y;
+	_H = H;
+}
+void Kalmanmv::MatrixMult(double **matrix1,int r1,int c1,double **matrix2,int r2,int c2,double **Output)
 {
 	int i = r1; //row
  	int j = c1; //cols
