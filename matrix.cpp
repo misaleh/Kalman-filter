@@ -43,12 +43,8 @@ short int Matrix::mult( Matrix *B, Matrix *C)
 			for(int k= 0 ;k < B->getRows() ; k++)
 			{
 				element += (this->getVal(i,k) * B->getVal(k,j)) ;
-				//std::cout<<element<<std::endl;
-				//std::cout<<this->getVal(i,k)<<std::endl;
-				//std::cout<< B->getVal(k,j)<<std::endl;
 
 			}
-			//std::cout <<"\n"<<std::endl;
 			C->setVal(i,j,element);
 			element = 0;
 		}

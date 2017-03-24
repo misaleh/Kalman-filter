@@ -1,4 +1,6 @@
 /*
+This is kalman filter libarary that does not need any libraries
+
 Author: Mostafa Saleh
 Email: moustafa.i.saleh@gmail.com
 */
@@ -32,22 +34,12 @@ Matrix C(2,2);
 int count = 0;
 // fill A and B
 for(int i = 0; i < 2 ; i++)
-{
 	for(int j= 0 ; j < 4; j++)
-	{
-		count++;
-		A.setVal(i,j,count);
-	}
-}
+		A.setVal(i,j,++count);
 count = 0 ;
 for(int i = 0; i < 4 ; i++)
-{
 	for(int j= 0 ; j < 2; j++)
-	{
-		count++;
-		B.setVal(i,j,count);
-	}
-}
+		B.setVal(i,j,++count);
 //multiplying
 A.mult(&B,&C);
 std::cout<<"here\n";
